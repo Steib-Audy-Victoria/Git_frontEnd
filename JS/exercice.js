@@ -132,6 +132,10 @@ chaussures.forEach(function (chaussure) {
     console.log('\n');
 });
 
+chaussures.forEach(function (chaussure) {
+    console.log(chaussure)
+});
+
 // 2. Log un tableau de toutes les Nikes
 
 let nikes = [];
@@ -144,6 +148,11 @@ chaussures.forEach(function (chaussure) {
 
 console.log(nikes);
 
+let nikes2 = chaussures.filter((marque) => {
+    return marque === 'Nike'
+})
+
+console.log(nikes2)
 
 // 3. Log du prix des Vans "Old Skool"
 
@@ -152,6 +161,10 @@ chaussures.forEach(function (chaussure) {
         console.log(`Prix des Vans Old Skool : ${chaussure.prix} euros`);
     }
 });
+
+chaussures.filter(({ marque, titre }) => marque === 'Vans' && titre === "Old Skool").forEach(({ prix }) => {
+    console.log(prix)
+})
 
 // 4. Log un tableau de toutes les chaussures collector
 
@@ -165,6 +178,10 @@ chaussures.forEach(function (chaussure) {
 
 console.log(chaussuresCollector);
 
+let collectors = chaussures.filter((collector) => collector)
+console.log(collectors)
+
+
 // 5. Log couleur lacets de la vans Sk8
 
 chaussures.forEach(function (chaussure) {
@@ -173,6 +190,10 @@ chaussures.forEach(function (chaussure) {
         console.log(`Couleur des lacets de la Vans Sk8 : ${couleurLacets}`);
     }
 });
+
+let sk8 = chaussures.find((chaussure) => {
+    return chaussure.titre === "Sk8"
+})
 
 // 6. Changer la couleur de la vans Sk8 en violet et log la chaussure
 
@@ -194,3 +215,9 @@ chaussures.forEach(function (chaussure) {
 });
 
 console.log(`Le montant total de toutes les chaussures Nike est de : ${montantTotalNikes} euros`);
+
+
+let total = nikes2.reduce((accumulator, chaussure) => {
+    return accumulator + chaussure.prix
+}, 0)
+console.log(total)
