@@ -1,29 +1,22 @@
 <script setup>
 import { computed } from 'vue'
-import IconArrowR from '../icons/IconArrowR.vue'
-import IconArrowL from '../icons/IconArrowL.vue'
 import IconMarket from '../icons/IconMarket.vue'
 import IconSearch from '../icons/IconSearch.vue'
 import IconCall from '../icons/IconCall.vue'
 import IconClock from '../icons/IconClock.vue'
 import IconLocalisation from '../icons/IconLocalisation.vue'
 import IconFavori from '../icons/IconFavori.vue'
-import IconNext from '../icons/IconNext.vue'
 
 const props = defineProps({
   name: String,
+  background: String,
   color: String,
-  stroke: String,
   size: String,
 })
 const getIcon = computed(() => {
   switch (props.name) {
-  case 'Arrow Rigth':
-    return IconArrowR
   case 'Market':
     return IconMarket
-  case 'Arrow Left':
-    return IconArrowL
   case 'Search':
     return IconSearch
   case 'Clock':
@@ -34,24 +27,22 @@ const getIcon = computed(() => {
     return IconCall
   case 'Favori':
     return IconFavori
-  case 'Next':
-    return IconNext
 
   default:
-    return IconArrowR
+    return IconMarket
   }
 })
 
 const className = computed(() => ({
-  ' -black': props.color === 'black',
-  ' -primary': props.color === 'primary',
-  ' -white': props.color === 'white',
-  ' -secondary': props.color === 'secondary',
+  ' -black': props.background === 'black',
+  ' -primary': props.background === 'primary',
+  ' -white': props.background === 'white',
+  ' -secondary': props.background === 'secondary',
 
-  ' -sblack': props.stroke === 'black',
-  ' -sprimary': props.stroke === 'primary',
-  ' -swhite': props.stroke === 'white',
-  ' -ssecondary': props.stroke === 'secondary',
+  ' -sblack': props.color === 'black',
+  ' -sprimary': props.color === 'primary',
+  ' -swhite': props.color === 'white',
+  ' -ssecondary': props.color === 'secondary',
  
  
   ' -small': props.size === 'small',
@@ -92,7 +83,7 @@ const className = computed(() => ({
     background: #000;
   }
 
-  //stroke
+  //color
 
   &.-sprimary {
     color: #f48e28;
@@ -108,6 +99,9 @@ const className = computed(() => ({
   &.-sblack {
     color: #000;
   }
+
+
+  //size
 
   &.-small {
     svg {
