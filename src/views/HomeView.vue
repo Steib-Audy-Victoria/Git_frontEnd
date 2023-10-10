@@ -1,38 +1,41 @@
 <script setup>
-import MyButton from '@/components/elements/MyButtonVue3.vue'
-import DefaultLayout from "../components/layouts/DefaultLayout.vue";
-
-</script>
+import MyBackgroundScroll from '../components/MyBackgroundScroll.vue'
+import MyButton from '@/components/elements/MyButton.vue'
+import DefaultLayout from '@/components/layouts/DefaultLayout.vue' 
+</script> 
 
 <template>
- <!-- <MyButton>My Button</MyButton> -->
- <!-- <MyButton size="small"  href="/about">My Small Button</MyButton> -->
- <!-- <MyButton  variant="rounded" >My Rounded Button</MyButton> -->
- <p></p>
-
- <DefaultLayout>
-    <template v-slot:header>
-        <nav>
-            <ul>
-                <li><a href="#">link 1</a></li>
-                <li><a href="#">link 2</a></li>
-                <li><a href="#">link 3</a></li>
-                <!-- ul>li*3>a[href="#"]{link $}-->
-            </ul>
-        </nav>
+  <DefaultLayout>
+    <template #header>
+      <nav>
+        <ul>
+          <li><a href="#">Nav link 1</a></li>
+          <li><a href="#">Nav link 2</a></li>
+          <li><a href="#">Nav link 3</a></li>
+        </ul>
+      </nav>
     </template>
 
-    <template v-slot:article>
-        <h1>Hello world !</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Delectus commodi quisquam obcaecati atque dolor ab velit porro enim, eius reiciendis placeat, 
-            quasi impedit repudiandae mollitia quidem sapiente quas molestiae beatae!</p>
+    <template #aside>
+      <img style='max-width: 100px;' src='@/assets/image-1.png' />
+      <nav>
+        <ul>
+          <li><a href="#">Aside link 1</a></li>
+          <li><a href="#">Aside link 2</a></li>
+          <li><a href="#">Aside link 3</a></li>
+        </ul>
+      </nav>
     </template>
-    
-    <p> test aside</p>
 
-    <template v-slot:footer>
-     <MyButton size="small"  href="/about">My Button</MyButton>
+    <MyBackgroundScroll />
+
+    <template #footer>
+      <MyButton href="/about" variant="rounded">My link Button</MyButton>
     </template>
- </DefaultLayout>
+  </DefaultLayout>
+
+  <!-- <MyButton size="small" href="/about">My Small Button</MyButton>
+  <MyButton href="/about">My link Button</MyButton>
+  <MyButton variant="rounded" >My rounded Button</MyButton> -->
+  <p></p>
 </template>

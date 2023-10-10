@@ -1,26 +1,28 @@
-<script>
-export default {
-  props: {
-    content: String,
-    href: String,
-    size: String,
-    variant: String
-  },
-  data() {
-    /* J'ai corrigé cette partie après le cours avec une gestion des classes beaucoup plus simple. 
+<script setup>
+import { computed } from "vue"
+
+const props = defineProps({
+  href: String,
+  size: String,
+  variant: String
+})
+
+/* J'ai corrigé cette partie après le cours avec une gestion des classes beaucoup plus simple. 
 J'avais oublié qu'on pouvait mettre des objets dans le className */
-    return {
-      className: {
-        ' -rounded': this.variant === 'rounded',
-        ' -small': this.size === 'small'
-      }
-    }
-  }
-}
+
+const className = computed(() => ({
+  ' -rounded': props.variant === 'rounded',
+  ' -small': props.size === 'small'
+}))
+
 </script>
 <template>
-  <a v-if="href" :href="href" class="button" :class="className"><slot></slot></a>
-  <button v-else class="button" :class="className"><slot></slot></button>
+  <a v-if="href" :href="href" class="button" :class="className">
+    <slot></slot>
+  </a>
+  <button v-else class="button" :class="className">
+    <slot></slot>
+  </button>
 </template>
 
 <style lang="scss" scoped>
@@ -43,7 +45,7 @@ J'avais oublié qu'on pouvait mettre des objets dans le className */
     background: $primary-color;
     border-radius: rem(37);
     font-weight: 500;
-    padding: rem(26) rem(64);
+    padding: rem(26) rem(64); 
   }
 
   &.-small {
