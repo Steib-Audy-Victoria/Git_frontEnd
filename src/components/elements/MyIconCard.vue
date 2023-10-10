@@ -20,12 +20,12 @@ defineProps({
 <style lang="scss" scoped>
 .icon {
   align-items: center;
-  background: $white;
+  background: $primary-color;
   border-radius: 100%;
   box-shadow: 0 0 rem(5) 0 $gray;
   display: inline-flex;
-  height: rem(50);
+  height: rem(60);
   justify-content: center;
-  width: rem(50);
+  width: rem(60);
 }
 </style>
