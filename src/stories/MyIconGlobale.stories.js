@@ -17,7 +17,7 @@ export default {
     },
     background: {
       control: 'select',
-      options: ['base', 'primary', 'secondary', 'black', 'white']
+      options: ['base', 'primary', 'secondary', 'black', 'white', 'none']
     },
     color: {
       control: 'select',

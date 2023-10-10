@@ -38,6 +38,7 @@ const className = computed(() => ({
   ' -primary': props.background === 'primary',
   ' -white': props.background === 'white',
   ' -secondary': props.background === 'secondary',
+  ' -none': props.background === 'none',
 
   ' -sblack': props.color === 'black',
   ' -sprimary': props.color === 'primary',
@@ -81,6 +82,11 @@ const className = computed(() => ({
 
   &.-black {
     background: #000;
+  }
+
+  &.-none {
+    background: none;
+    box-shadow: none;
   }
 
   //color
