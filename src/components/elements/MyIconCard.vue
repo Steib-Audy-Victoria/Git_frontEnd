@@ -3,7 +3,6 @@ import IconFourchette from '../icons/IconFourchette.vue'
 import IconLivraison from '../icons/IconLivraison.vue'
 import IconRepas from '../icons/IconRepas.vue'
 
-
 defineProps({
   name: String
 })
@@ -11,9 +10,9 @@ defineProps({
 
 <template>
   <i class="icon">
-    <IconFourchette v-if="name === 'Fourchette'" />
+    <IconRepas v-if="name === 'Repas'" />
     <IconLivraison v-if="name === 'Livraison'" />
-    <IconRepas v-else />
+    <IconFourchette v-else />
   </i>
 </template>
 
