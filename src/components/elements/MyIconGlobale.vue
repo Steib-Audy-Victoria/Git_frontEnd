@@ -1,35 +1,74 @@
 <script setup>
 import { computed } from 'vue'
+
 import IconMarket from '../icons/IconMarket.vue'
 import IconSearch from '../icons/IconSearch.vue'
 import IconCall from '../icons/IconCall.vue'
 import IconClock from '../icons/IconClock.vue'
 import IconLocalisation from '../icons/IconLocalisation.vue'
 import IconFavori from '../icons/IconFavori.vue'
+import IconPlay from '../icons/IconPlay.vue'
+
+import IconFourchette from '../icons/IconFourchette.vue'
+import IconRepas from '../icons/IconRepas.vue'
+import IconLivraison from '../icons/IconLivraison.vue'
+
+import IconArrow from '../icons/IconArrow.vue'
+import IconNext from '../icons/IconNext.vue'
+
+import IconFacebook from '../icons/IconFacebook.vue'
+import IconTwitter from '../icons/IconTwitter.vue'
+import IconLinkedin from '../icons/IconLinkedin.vue'
+import IconInstagram from '../icons/IconInstagram.vue'
 
 const props = defineProps({
   name: String,
   background: String,
   color: String,
   size: String,
+  position: String,
+  fill: String
 })
 const getIcon = computed(() => {
   switch (props.name) {
-  case 'Market':
-    return IconMarket
-  case 'Search':
-    return IconSearch
-  case 'Clock':
-    return IconClock
-  case 'Localisation':
-    return IconLocalisation
-  case 'Call':
-    return IconCall
-  case 'Favori':
-    return IconFavori
+    case 'Market':
+      return IconMarket
+    case 'Search':
+      return IconSearch
+    case 'Clock':
+      return IconClock
+    case 'Localisation':
+      return IconLocalisation
+    case 'Call':
+      return IconCall
+    case 'Favori':
+      return IconFavori
+    case 'Play':
+      return IconPlay
 
-  default:
-    return IconMarket
+    case 'Fourchette':
+      return IconFourchette
+    case 'Repas':
+      return IconRepas
+    case 'Livraison':
+      return IconLivraison
+
+    case 'Arrow':
+      return IconArrow
+    case 'Next':
+      return IconNext
+
+    case 'Facebook':
+      return IconFacebook
+    case 'Twitter':
+      return IconTwitter
+    case 'Linkedin':
+      return IconLinkedin
+    case 'Instagram':
+      return IconInstagram
+
+    default:
+      return IconMarket
   }
 })
 
@@ -40,15 +79,21 @@ const className = computed(() => ({
   ' -secondary': props.background === 'secondary',
   ' -none': props.background === 'none',
 
-  ' -sblack': props.color === 'black',
-  ' -sprimary': props.color === 'primary',
-  ' -swhite': props.color === 'white',
-  ' -ssecondary': props.color === 'secondary',
- 
- 
+  ' -cblack': props.color === 'black',
+  ' -cprimary': props.color === 'primary',
+  ' -cwhite': props.color === 'white',
+
   ' -small': props.size === 'small',
   ' -regular': props.size === 'regular',
-  ' -big': props.size === 'big'
+  ' -big': props.size === 'big',
+
+  ' -left': props.position === 'left',
+  ' -right': props.position === 'right',
+
+  ' -sblack': props.fill === 'black',
+  ' -sprimary': props.fill === 'primary',
+  ' -swhite': props.fill === 'white',
+  ' -snone': props.fill === 'none'
 }))
 </script>
 
@@ -70,18 +115,18 @@ const className = computed(() => ({
 
   //background
   &.-primary {
-    background: #f48e28;
+    background: $primary-color;
   }
   &.-secondary {
     background: #f5ddc4;
   }
 
   &.-white {
-    background: #fff;
+    background: $white;
   }
 
   &.-black {
-    background: #000;
+    background: $black;
   }
 
   &.-none {
@@ -91,21 +136,17 @@ const className = computed(() => ({
 
   //color
 
-  &.-sprimary {
-    color: #f48e28;
-  }
-  &.-ssecondary {
-    color: #f5ddc4;
+  &.-cprimary {
+    color: $primary-color;
   }
 
-  &.-swhite {
-    color: #fff;
+  &.-cwhite {
+    color: $white;
   }
 
-  &.-sblack {
-    color: #000;
+  &.-cblack {
+    color: $black;
   }
-
 
   //size
 
@@ -113,12 +154,50 @@ const className = computed(() => ({
     svg {
       scale: 0.5;
     }
+    height: rem(25);
+    width: rem(25);
   }
   &.-regular {
-    size: 1rem;
+    height: rem(50);
+    width: rem(50);
   }
   &.-big {
-    size: 3rem;
+    svg {
+      scale: 1.5;
+    }
+    height: rem(100);
+    width: rem(100);
+  }
+
+  //position
+  &.-left {
+    rotate: 180deg;
+  }
+  &.-right {
+    rotate: 0deg;
+  }
+
+  //fill
+  &.-sprimary {
+    svg {
+      fill: $primary-color;
+    }
+  }
+  &.-swhite {
+    svg {
+      fill: $white;
+    }
+  }
+
+  &.-sblack {
+    svg {
+      fill: $black;
+    }
+  }
+  &.-snone {
+    svg {
+      fill: none;
+    }
   }
 }
 </style>

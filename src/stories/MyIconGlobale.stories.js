@@ -13,6 +13,20 @@ export default {
         'Localisation',
         'Call',
         'Favori',
+        'Play',
+
+        'Fourchette',
+        'Repas',
+        'Livraison',
+
+        'Arrow',
+        'Next',
+
+        'Facebook',
+        'Instagram',
+        'Twitter',
+        'Linkedin',
+        
       ]
     },
     background: {
@@ -21,12 +35,20 @@ export default {
     },
     color: {
       control: 'select',
-      options: ['base', 'primary', 'secondary', 'black', 'white']
+      options: ['base', 'primary', 'black', 'white']
     },
     size: {
       control: 'select',
-      options: ['small', 'regular', 'big']
-    }
+      options: ['regular', 'small', 'big']
+    },
+    position: {
+      control: 'select',
+      options: ['right', 'left']
+    },
+    fill: {
+      control: 'select',
+      options: ['base', 'primary', 'black', 'white', 'none']
+    },
   }
 }
 
