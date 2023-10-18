@@ -8,7 +8,7 @@ export default {
   }
 }
 
-export const Card = {
+export const Footer = {
   render: (args) => {
     return {
       components: {

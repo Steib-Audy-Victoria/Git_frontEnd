@@ -8,7 +8,7 @@ export default {
   }
 }
 
-export const Card = {
+export const Header = {
   render: (args) => {
     return {
       components: {
