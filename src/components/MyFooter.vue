@@ -89,6 +89,7 @@ import MyIconGlobale from './elements/MyIconGlobale.vue'
   grid-template-columns: repeat(4, 1fr);
   padding: rem(20);
   background: #fafaff;
+  max-width: 100vw;
 
   &__content {
     display: flex;

@@ -30,6 +30,8 @@ import MyIconGlobale from './elements/MyIconGlobale.vue'
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  max-width: 100vw;
 
   &__image {
     img {
