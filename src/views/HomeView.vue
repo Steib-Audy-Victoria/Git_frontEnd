@@ -5,6 +5,7 @@ import MyFooter from '@/components/MyFooter.vue'
 import MyCardMenu from '@/components/MyCardMenu.vue'
 import MyBigCardMenu from '@/components/MyBigCardMenu.vue'
 import MyCardFood from '@/components/MyCardFood.vue'
+import MyCardSlider from '@/components/MyCardSlider.vue'
 
 import MyIconGlobale from '../components/elements/MyIconGlobale.vue'
 
@@ -189,7 +190,19 @@ import MyNewsletter from '@/components/MyNewsletter.vue'
     </div>
   </section>
 
-  <section class="Testimonials"></section>
+  <section class="Testimonials">
+    <p class="Testimonials__subTitle">Testimonials</p>
+    <h2 class="Testimonials__title">Our Happy Client Says</h2>
+    <MyCardSlider
+      imageSrc="testFoodBurger.png"
+      imageAlt="Menu Burger"
+      imageSrcPers="imgPers.png"
+      imageAltPers="image d'une personne"
+      name="Willians Jhone"
+      role="CEO & Co-Founder"
+      avis="“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet nisl tincidunt adipiscing dictumst blandit hac. Lectus cras velit sed dignissim ac, aliquet. Metus egestas habitant feugiat neque ultrices nunc, dolor egestas mus.”"
+    />
+  </section>
 
   <section class="Contact">
     <MyNewsletter />
@@ -429,6 +442,27 @@ import MyNewsletter from '@/components/MyNewsletter.vue'
         text-align: end;
       }
     }
+  }
+}
+
+.Testimonials {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100vw;
+  padding: rem(50) rem(100);
+
+  &__subTitle {
+    font-size: rem(15);
+    font-family: $primary-font-family;
+    color: $primary-color;
+  }
+
+  &__title {
+    font-size: rem(30);
+    font-weight: 700;
+    font-family: $primary-font-family;
   }
 }
 </style>
