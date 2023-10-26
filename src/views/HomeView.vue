@@ -136,6 +136,7 @@ import MyNewsletter from '@/components/MyNewsletter.vue'
     </div>
     <p>button</p>
   </section>
+
   <section class="Services">
     <p class="Services__subTitle">Services</p>
     <h2 class="Services__title">Why Choose Our Favorite Food</h2>
@@ -156,7 +157,38 @@ import MyNewsletter from '@/components/MyNewsletter.vue'
       />
     </div>
   </section>
-  <section class="Work"></section>
+
+  <section class="Work">
+    <p class="Work__subTitle">How to work</p>
+    <h2 class="Work__title">Food Us An Important Part Of A Balanced Diet</h2>
+    <div class="Work__card">
+      <div class="Work__card-choose">
+        <img src="/public/choose.png" alt="Ordi Choose" />
+        <h4>CHOOSE</h4>
+        <p>
+          Do you want to lose weight, exercise, adhere to a therapeutic diet? Our dietitian will
+          help you with choosing the right program!
+        </p>
+      </div>
+      <div class="Work__card-food">
+        <h4>PREPARE FOOD</h4>
+        <p>
+          Do you want to lose weight, exercise, adhere to a therapeutic diet? Our dietitian will
+          help you with choosing the right program!
+        </p>
+        <img src="/public/prepareFood.png" alt="Prepare Food" />
+      </div>
+      <div class="Work__card-deliver">
+        <img src="/public/deliver.png" alt="Deliver" />
+        <h4>DELIVER</h4>
+        <p>
+          Do you want to lose weight, exercise, adhere to a therapeutic diet? Our dietitian will
+          help you with choosing the right program!
+        </p>
+      </div>
+    </div>
+  </section>
+
   <section class="Testimonials"></section>
 
   <section class="Contact">
@@ -306,6 +338,97 @@ import MyNewsletter from '@/components/MyNewsletter.vue'
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: rem(40);
+  }
+}
+
+.Work {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100vw;
+
+  &__subTitle {
+    font-size: rem(15);
+    font-family: $primary-font-family;
+    color: $primary-color;
+  }
+
+  &__title {
+    font-size: rem(30);
+    font-weight: 700;
+    font-family: $primary-font-family;
+  }
+
+  &__card {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: rem(50);
+    max-width: 100vw;
+    padding: rem(50) rem(100);
+
+    &-choose {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+      gap: rem(20);
+
+      h4 {
+        font-size: rem(30);
+        font-weight: 700;
+        font-family: $primary-font-family;
+      }
+
+      p {
+        font-size: rem(15);
+        font-weight: 400;
+        font-family: $primary-font-family;
+        text-align: start;
+      }
+    }
+
+    &-food {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: rem(20);
+
+      h4 {
+        font-size: rem(30);
+        font-weight: 700;
+        font-family: $primary-font-family;
+      }
+
+      p {
+        font-size: rem(15);
+        font-weight: 400;
+        font-family: $primary-font-family;
+        text-align: center;
+      }
+    }
+
+    &-deliver {
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      align-items: end;
+      gap: rem(20);
+
+      h4 {
+        font-size: rem(30);
+        font-weight: 700;
+        font-family: $primary-font-family;
+      }
+
+      p {
+        font-size: rem(15);
+        font-weight: 400;
+        font-family: $primary-font-family;
+        text-align: end;
+      }
+    }
   }
 }
 </style>
