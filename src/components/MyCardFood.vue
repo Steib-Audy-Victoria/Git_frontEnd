@@ -65,6 +65,12 @@ name()
     > * + * {
       margin-top: rem(20);
     }
+    h2 {
+      font-weight: 700;
+    }
+    p {
+      font-size: rem(15);
+    }
   }
 }
 </style>

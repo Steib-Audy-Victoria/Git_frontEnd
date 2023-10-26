@@ -41,6 +41,9 @@ import MyButton from './elements/MyButton.vue'
   }
 
   &__content {
+    display: flex;
+    flex-direction: column;
+    gap: rem(30);
     & h3 {
       font-family: $primary-font-family;
       font-size: rem(20);

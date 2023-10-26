@@ -87,7 +87,9 @@ import MyIconGlobale from './elements/MyIconGlobale.vue'
 .Footer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: rem(20);
   padding: rem(20);
+  margin: rem(-10);
   background: #fafaff;
   max-width: 100vw;
 

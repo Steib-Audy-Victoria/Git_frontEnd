@@ -29,9 +29,10 @@ import MyIconGlobale from './elements/MyIconGlobale.vue'
 .Header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   max-width: 100vw;
+  padding-top: rem(15);
 
   &__image {
     img {
